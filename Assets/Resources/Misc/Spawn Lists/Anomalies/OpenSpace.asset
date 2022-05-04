@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c689ee8e33658e45a3ed2db7defe779, type: 3}
+  m_Name: OpenSpace
+  m_EditorClassIdentifier: 
+  list:
+  - obj: {fileID: 4354271201272728020, guid: a9fc3526c17b08b4693d85d0445818ff, type: 3}
+    weight: 33
+  - obj: {fileID: 8200237541794646168, guid: 3c72760d58d76b04ba5c96ff57687079, type: 3}
+    weight: 100
+  - obj: {fileID: 8760326167906815868, guid: 75517452412a0f5448b6863892da8aee, type: 3}
+    weight: 100
+  - obj: {fileID: 715547891159105256, guid: e2090f57860f0db4a9e53c664f712f5f, type: 3}
+    weight: 33
+  - obj: {fileID: 5976374774729651880, guid: 6fb7987019535c14196d68637de868b4, type: 3}
+    weight: 100
+  - obj: {fileID: 4634457330519530742, guid: b4c7112805810ae46b51ced60ff374e8, type: 3}
+    weight: 66
+  - obj: {fileID: 4184920548175997196, guid: 564a08f95acddf14c8c65d084ef39bed, type: 3}
+    weight: 100
+  - obj: {fileID: 4998876432234964224, guid: 6f6994ed9adef5e4b8390bc0615b5fca, type: 3}
+    weight: 100
+  - obj: {fileID: 4754450268023096926, guid: 2991ea9ceb841cf42bc40912448df395, type: 3}
+    weight: 100

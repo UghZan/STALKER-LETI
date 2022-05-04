@@ -1,0 +1,89 @@
+﻿if (slotFrom < maxHotbarSlots) //it's a hotbar slot
+            {
+                if (hotbarItems[slotFrom] == null) return false;
+                else
+                {
+                    if (slotTo < maxHotbarSlots) //hotbar slot
+                    {
+                        if (hotbarItems[slotTo] == null)
+                        {
+                            hotbarItems[slotTo] = hotbarItems[slotFrom];
+                            hotbarItems[slotFrom] = null;
+                        }
+                        else
+                        {
+                            ItemInfo tempItem = hotbarItems[slotFrom];
+                            hotbarItems[slotFrom] = hotbarItems[slotTo];
+                            hotbarItems[slotTo] = tempItem;
+                        }
+
+                        ui.UpdateHotbarSlots();
+                        return true;
+                    }
+                    else //inventory slot
+                    {
+                        slotTo -= maxHotbarSlots;
+                        if (invItems[slotTo] == null)
+                        {
+                            invItems[slotTo] = hotbarItems[slotFrom];
+                            hotbarItems[slotFrom] = null;
+                        }
+                        else
+                        {
+                            ItemInfo tempItem = hotbarItems[slotFrom];
+                            hotbarItems[slotFrom] = invItems[slotTo];
+                            invItems[slotTo] = tempItem;
+                        }
+
+                        ui.UpdateHotbarSlots();
+                        ui.UpdateInventorySlots();
+                        return true;
+                    }
+                }
+            }
+            else if (slotFrom < maxInvSlots) //it's an inv slot
+            {
+                slotFrom -= maxHotbarSlots;
+                if (invItems[slotFrom] == null) return false;
+                
+                if (slotTo < hotbarSlots) //hotbar slot
+                {
+                    if (hotbarItems[slotTo] == null)
+                    {
+                        hotbarItems[slotTo] = invItems[slotFrom];
+                        invItems[slotFrom] = null;
+                    }
+                    else
+                    {
+                        ItemInfo tempItem = invItems[slotFrom];
+                        invItems[slotFrom] = hotbarItems[slotTo];
+                        hotbarItems[slotTo] = tempItem;
+                    }
+
+                    ui.UpdateHotbarSlots();
+                    ui.UpdateInventorySlots();
+                    return true;
+                }
+                else //inventory slot
+                {
+                    slotTo -= maxHotbarSlots;
+                    if (invItems[slotTo] == null)
+                    {
+                        invItems[slotTo] = invItems[slotFrom];
+                        invItems[slotFrom] = null;
+                    }
+                    else
+                    {
+                        ItemInfo tempItem = invItems[slotFrom];
+                        invItems[slotFrom] = invItems[slotTo];
+                        invItems[slotTo] = tempItem;
+                    }
+
+                    ui.UpdateInventorySlots();
+                    return true;
+                }
+            }
+            else //artbelt slot
+            {
+                
+            }
