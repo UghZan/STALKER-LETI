@@ -7,8 +7,7 @@ public class CleansingBuff : Buff
 {
     public Buff[] buffsToRemove;
 
-
-    public override void OnApply()
+    public override void OnApply(GenericStats stats)
     {
         foreach (var buff in buffsToRemove)
         {

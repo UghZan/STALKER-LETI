@@ -1,8 +1,9 @@
+using Common;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericStats : MonoBehaviour
+public class GenericStats : MonoBehaviour, IDamageable
 {
     [Header("Health")] 
     public float maxHealth = 100f;
@@ -119,6 +120,45 @@ public class GenericStats : MonoBehaviour
         if (health <= 0)
         {
             isDead = true;
+        }
+    }
+
+    public void TakeDamage(DamageType type, float damage)
+    {
+        float scaledDamageNonInverted = HelperMethods.ProjectOnRange(damage, 0, 50, 0.15f, 1f);
+        float scaledDamage = 1 - scaledDamageNonInverted;
+        //if (type == DamageType.Normal || type == DamageType.Electric) rc.RecoilPunch(Mathf.Min(Mathf.Abs(damage), 16), Mathf.Min(Mathf.Abs(damage), 16), 1, Mathf.Abs(damage / health) + 0.1f, 0);
+        switch (type)
+        {
+            case DamageType.Normal:
+                DamageEffectManager.SetColor(new Color(1, scaledDamage, scaledDamage, 1));
+                health = Mathf.Clamp(health + damage * normalVulnerability, 0, maxHealth);
+                break;
+            case DamageType.Electric:
+                DamageEffectManager.SetContrastAndExposure(100 * scaledDamage, 4 * scaledDamage);
+                health = Mathf.Clamp(health + damage * electricVulnerability * anomalVulnerability, 0, maxHealth);
+                break;
+            case DamageType.Freeze:
+                DamageEffectManager.SetColor(new Color(scaledDamage, 1, 1, 1));
+                health = Mathf.Clamp(health + damage * freezeVulnerability * anomalVulnerability, 0, maxHealth);
+                break;
+            case DamageType.Hot:
+                DamageEffectManager.SetColor(new Color(1, scaledDamage, scaledDamage, 1));
+                health = Mathf.Clamp(health + damage * hotVulnerability * anomalVulnerability, 0, maxHealth);
+                break;
+            case DamageType.Caustic:
+                DamageEffectManager.SetColor(new Color(scaledDamage, 1f, scaledDamage, 1));
+                health = Mathf.Clamp(health + damage * causticVulnerability * anomalVulnerability, 0, maxHealth);
+                break;
+            case DamageType.Radioactive:
+                rads = Mathf.Clamp(rads + damage * radVulnerability, 0, 1000);
+                break;
+            case DamageType.Bleed:
+                bleed = Mathf.Clamp(bleed + damage * bleedVulnerability, 0, 1000);
+                break;
+            case DamageType.Mental:
+                mentalHealth = Mathf.Clamp(mentalHealth + damage * mentalVulnerability, 0, maxMentalHealth);
+                break;
         }
     }
 }

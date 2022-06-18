@@ -11,12 +11,12 @@ public class RegenBuff : Buff
     public float mentalRegen;
     public float staminaRegen;
     
-    public override void OnTick()
+    public override void OnTick(GenericStats stats)
     {
-        plr.UpdateStat("health", healthRegen);
-        plr.UpdateStat("rad", -radRegen);
-        plr.UpdateStat("bleed", -bleedRegen);
-        plr.UpdateStat("mental", mentalRegen);
-        plr.UpdateStat("stamina", staminaRegen);
+        stats.UpdateStat("health", healthRegen);
+        stats.UpdateStat("rad", -radRegen);
+        stats.UpdateStat("bleed", -bleedRegen);
+        stats.UpdateStat("mental", mentalRegen);
+        stats.UpdateStat("stamina", staminaRegen);
     }
 }

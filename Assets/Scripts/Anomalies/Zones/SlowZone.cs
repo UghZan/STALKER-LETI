@@ -11,7 +11,7 @@ public class SlowZone : MonoBehaviour
     {
         if (other.TryGetComponent<Rigidbody>(out Rigidbody r))
         {
-            if (other.TryGetComponent<IMoving>(out IMoving p))
+            if (other.TryGetComponent(out IMoving p))
             {
                 p.externalSpeedMultiplier = slowFactor;
             }
@@ -22,7 +22,7 @@ public class SlowZone : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent<PlayerController>(out PlayerController p))
+        if (other.TryGetComponent(out IMoving p))
         {
             p.externalSpeedMultiplier = 1;
         }

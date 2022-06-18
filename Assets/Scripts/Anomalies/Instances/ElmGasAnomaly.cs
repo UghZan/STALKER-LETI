@@ -11,35 +11,35 @@ public class ElmGasAnomaly : MonoBehaviour
     public int poisoningTime;
 
     private bool playerInside;
-    private Player p;
+    private BuffManager bm;
     private float timer;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Player _bm))
+        if (other.TryGetComponent(out BuffManager _bm))
         {
             timer = timeUntilPoisoning;
             playerInside = true;
-            p = _bm;
+            bm = _bm;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out Player _bm))
+        if (other.TryGetComponent(out BuffManager _bm))
         {
             timer = 0;
             playerInside = false;
-            p = null;
+            _bm = null;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        timer-=Time.deltaTime;
-        if (playerInside && timer <= 0 && !p.CheckBuff(buff))
+        timer -= Time.deltaTime;
+        if (playerInside && timer <= 0 && !bm.HasBuff(buff))
         {
-            p.AddBuff(new BuffEntry(p.s, buff, poisoningTime, p.buffM));
+            bm.AddBuff(new BuffEntry(buff, poisoningTime, bm));
         }
     }
     

@@ -9,10 +9,9 @@ public class BuffEntry
     public Buff buff;
     public int timer;
 
-    public BuffEntry(PlayerStats p, Buff b, int t, BuffManager bm)
+    public BuffEntry(Buff b, int t, BuffManager bm)
     {
         buff = b;
-        buff.plr = p;
         buff.bm = bm;
         timer = t;
     }

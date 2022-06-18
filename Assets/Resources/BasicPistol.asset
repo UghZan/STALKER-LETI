@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9444e4e181d9e846a3b23f1eeac7576, type: 3}
+  m_Name: BasicPistol
+  m_EditorClassIdentifier: 
+  itemDisplayName: 
+  itemDescription: 
+  itemObject: {fileID: 0}
+  itemIcon: {fileID: 0}
+  itemSize: {x: 0, y: 0}
+  itemWeight: 0
+  itemVolume: 0
+  ItemSlot: 0
+  itemStackSize: 1
+  essential: 0
+  damage: 0
+  damageVariance: 0
+  range: 100
+  ammoMax: 15
+  isAutomatic: 0
+  shootSpeed: 8
+  ammoPerShot: 1
+  weaponSpread: 0.01
+  muzzleChance: 1
+  recoilIncreaseStep: 1
+  fixedRecoil: 1
+  maxRecoil: 2
+  minRecoil: 1
+  recoilRecoverSpeed: 1
+  horizontalCamRecoil: 2
+  verticalCamRecoil: 4
+  negativeVerticalRecoilReduction: -0.2
+  maxVisualRecoil: 1
+  minVisualRecoil: 0.2
+  visualRecoilRecoverSpeed: 1
+  horizontalRotPunch: 5
+  verticalRotPunch: 18
+  pushBackForce: 0.25
+  negativeVerticalReduction: -0.5
+  timeUntilRecharge: 3
+  rechargeRate: 0.5

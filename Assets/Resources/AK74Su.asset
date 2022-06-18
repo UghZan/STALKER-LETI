@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96097018665442b89f543ecd93e0209, type: 3}
+  m_Name: AK74Su
+  m_EditorClassIdentifier: 
+  itemDisplayName: 
+  itemDescription: 
+  itemObject: {fileID: 0}
+  itemIcon: {fileID: -369002774, guid: c6da46a85a08d194dab76c0feef33a40, type: 3}
+  itemSize: {x: 4, y: 2}
+  itemWeight: 0
+  itemSlot: 3
+  itemStackSize: 1
+  essential: 0
+  weaponIndex: 0
+  damage: 0
+  damageVariance: 0
+  range: 100
+  ammoMax: 30
+  isAutomatic: 1
+  shootSpeed: 8
+  ammoPerShot: 1
+  weaponSpread: 1
+  muzzleChance: 1
+  recoilIncreaseStep: 0.25
+  fixedRecoil: 0
+  maxRecoil: 0.25
+  minRecoil: 2
+  recoilRecoverSpeed: 1
+  horizontalCamRecoil: 2
+  verticalCamRecoil: 8
+  negativeVerticalRecoilReduction: -0.2
+  maxVisualRecoil: 1
+  minVisualRecoil: 0
+  visualRecoilRecoverSpeed: 1
+  horizontalRotPunch: 1
+  verticalRotPunch: 4
+  pushBackForce: 0.1
+  negativeVerticalReduction: -0.2

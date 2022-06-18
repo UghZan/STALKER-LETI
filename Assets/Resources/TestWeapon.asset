@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96097018665442b89f543ecd93e0209, type: 3}
+  m_Name: TestWeapon
+  m_EditorClassIdentifier: 
+  itemDisplayName: 
+  itemDescription: 
+  itemObject: {fileID: 0}
+  itemStackSize: 99
+  essential: 0
+  damage: 0
+  damageVariance: 0
+  resistPiercing: 0
+  stunPerShot: 0
+  range: 200
+  ammoMax: 1000
+  isAutomatic: 1
+  shootSpeed: 6
+  ammoPerShot: 1
+  muzzleChance: 1
+  recoilIncreaseStep: 1
+  fixedRecoil: 0
+  maxRecoil: 4
+  minRecoil: 1
+  recoilRecoverSpeed: 16
+  horizontalCamRecoil: 2
+  verticalCamRecoil: 4
+  negativeVerticalRecoilReduction: -0.2
+  maxVisualRecoil: 4
+  minVisualRecoil: 0.2
+  visualRecoilRecoverSpeed: 32

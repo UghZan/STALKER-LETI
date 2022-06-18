@@ -1,4 +1,3 @@
-using Anomalies.Generation;
 using UnityEngine;
 
 namespace Anomalies
@@ -9,11 +8,10 @@ namespace Anomalies
         public float anomalyPower = 1.0f;
         private float cooldown;
 
-        private ArtifactGeneration genModule;
+        //private ArtifactGeneration genModule;
 
         protected virtual void Start()
         {
-            genModule = GetComponent<ArtifactGeneration>();
             var damageZones = GetComponentsInChildren<DamageZone>();
             foreach (var dz in damageZones)
             {

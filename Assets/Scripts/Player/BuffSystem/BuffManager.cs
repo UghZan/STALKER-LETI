@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class BuffManager : MonoBehaviour
 {
-    public List<BuffEntry> buffs;
+    List<BuffEntry> buffs;
+    [SerializeField] GenericStats stats;
 
     public void AddBuff(BuffEntry buff)
     {
         buffs.Add(buff);
-        buff.buff.OnApply();
+        buff.buff.OnApply(stats);
     }
 
     public void Start()
@@ -28,7 +29,7 @@ public class BuffManager : MonoBehaviour
             {
                 if (b.timer > 0)
                 {
-                    b.buff.OnTick();
+                    b.buff.OnTick(stats);
                     b.timer--;
                 }
             }
@@ -45,7 +46,7 @@ public class BuffManager : MonoBehaviour
         {
             if (buffs[i] == be)
             {
-                buffs[i].buff.OnRemove();
+                buffs[i].buff.OnRemove(stats);
                 buffs.RemoveAt(i);
             }
         }
@@ -57,9 +58,14 @@ public class BuffManager : MonoBehaviour
         {
             if (buffs[i].buff == b)
             {
-                buffs[i].buff.OnRemove();
+                buffs[i].buff.OnRemove(stats);
                 buffs.RemoveAt(i);
             }
         }
+    }
+
+    public bool HasBuff(Buff b)
+    {
+         return buffs.Exists(entry => entry.buff == b);
     }
 }

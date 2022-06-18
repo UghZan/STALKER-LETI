@@ -12,27 +12,27 @@ public class ResistBuff : Buff
     public float bleedResist;
     public float mentalResist;
         
-    public override void OnApply()
+    public override void OnApply(GenericStats stats)
     {
-        plr.UpdateMultiplier("normalVul", -normalResist);
-        plr.UpdateMultiplier("anomalVul", -anomalResist);
-        plr.UpdateMultiplier("electricVul", -electricResist);
-        plr.UpdateMultiplier("hotVul", -hotResist);
-        plr.UpdateMultiplier("freezeVul", -freezeResist);
-        plr.UpdateMultiplier("radVul", -radResist);
-        plr.UpdateMultiplier("bleedVul", -bleedResist);
-        plr.UpdateMultiplier("mentalVul", -mentalResist);
+        stats.UpdateMultiplier("normalVul", -normalResist);
+        stats.UpdateMultiplier("anomalVul", -anomalResist);
+        stats.UpdateMultiplier("electricVul", -electricResist);
+        stats.UpdateMultiplier("hotVul", -hotResist);
+        stats.UpdateMultiplier("freezeVul", -freezeResist);
+        stats.UpdateMultiplier("radVul", -radResist);
+        stats.UpdateMultiplier("bleedVul", -bleedResist);
+        stats.UpdateMultiplier("mentalVul", -mentalResist);
     }
         
-    public override void OnRemove()
+    public override void OnRemove(GenericStats stats)
     {
-        plr.UpdateMultiplier("normalVul", normalResist);
-        plr.UpdateMultiplier("anomalVul", anomalResist);
-        plr.UpdateMultiplier("electricVul", electricResist);
-        plr.UpdateMultiplier("hotVul", hotResist);
-        plr.UpdateMultiplier("freezeVul", freezeResist);
-        plr.UpdateMultiplier("radVul", radResist);
-        plr.UpdateMultiplier("bleedVul", bleedResist);
-        plr.UpdateMultiplier("mentalVul", mentalResist);
+        stats.UpdateMultiplier("normalVul", normalResist);
+        stats.UpdateMultiplier("anomalVul", anomalResist);
+        stats.UpdateMultiplier("electricVul", electricResist);
+        stats.UpdateMultiplier("hotVul", hotResist);
+        stats.UpdateMultiplier("freezeVul", freezeResist);
+        stats.UpdateMultiplier("radVul", radResist);
+        stats.UpdateMultiplier("bleedVul", bleedResist);
+        stats.UpdateMultiplier("mentalVul", mentalResist);
     }
 }

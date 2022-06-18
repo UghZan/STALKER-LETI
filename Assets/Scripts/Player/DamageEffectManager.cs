@@ -15,13 +15,13 @@ public class DamageEffectManager : MonoBehaviour
     private Volume _volume;
 
     private ColorAdjustments _adjust;
-    private PlayerStats ps;
+    private GenericStats ps;
 
     private void Start()
     {
         _volume = GetComponent<Volume>();
         _volume.profile.TryGet(out _adjust);
-        ps = GetComponentInParent<PlayerStats>();
+        ps = GetComponentInParent<GenericStats>();
         _color = Color.white;
     }
 
@@ -45,6 +45,6 @@ public class DamageEffectManager : MonoBehaviour
         _color = Color.Lerp(_color, Color.white, Time.deltaTime * recoverSpeed);
         _contrast = Mathf.Lerp(_contrast, 0, Time.deltaTime * recoverSpeed);
         _exposure = Mathf.Lerp(_exposure, 0, Time.deltaTime * recoverSpeed);
-        _adjust.saturation.Override(MiscHelper.Map(ps.health, 0, 100, -66f,0f));
+        _adjust.saturation.Override(HelperMethods.ProjectOnRange(ps.health, 0, 100, -66f,0f));
     }
 }
